@@ -12,20 +12,26 @@
         <div id="root">
             <div class="container">
                 <div class="slider-wrapper">
+                    <!-- invoco la funzione goPrev  -->
                     <div class="prev" @click="goPrev">
                         <i class="fas fa-angle-left"></i>
                     </div>
                     <div class="images">
+                        <!-- v-bind legato al contatore/index dell'array -->
                         <img class="active" :src="images[counter]">
-                        
                     </div>
-                    <div class="next" @click="goNext">
+                    <!-- invoco la funzione goNext  -->
+                    <div class="next" @click="goNext" v-on:keyup.enter="keyPress">
                         <i class="fas fa-angle-right"></i>
                     </div>
-                    <div class="nav">
+                    <div class="nav" >
+                        <!-- operatori ternai per verificare la condizione di identicità tra posizione del contatore con index dell'array -->
+                        <!-- se la posizione del counter corrisponde a quella dell'index allora applica la classe "active" -->
                         <i class="fas fa-circle"
                         :class="(counter === index)? 'active' :'' "
-                        v-for="(img, index) in images"></i>
+                        v-for="(img, index) in images" ></i>
+                       
+                        
                         
                     </div>
                 </div>
