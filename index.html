@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Slider</title>
+    </head>
+    <body>
+        <div id="root">
+            <div class="container">
+                <div class="slider-wrapper">
+                    <div class="prev" @click="goPrev">
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                    <div class="images">
+                        <img class="active" :src="images[counter]">
+                        
+                    </div>
+                    <div class="next" @click="goNext">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                    <div class="nav">
+                        <i class="fas fa-circle active first"></i>
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-circle last"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
