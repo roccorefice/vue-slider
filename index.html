@@ -21,7 +21,7 @@
                         <img class="active" :src="images[counter]">
                     </div>
                     <!-- invoco la funzione goNext  -->
-                    <div class="next" @click="goNext" v-on:keyup.enter="keyPress">
+                    <div class="next" @click="goNext" >
                         <i class="fas fa-angle-right"></i>
                     </div>
                     <div class="nav" >
@@ -29,7 +29,7 @@
                         <!-- se la posizione del counter corrisponde a quella dell'index allora applica la classe "active" -->
                         <i class="fas fa-circle"
                         :class="(counter === index)? 'active' :'' "
-                        v-for="(img, index) in images" ></i>
+                        v-for="(img, index) in images" @click="clickPoint(index)"></i>
                        
                         
                         

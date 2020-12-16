@@ -43,6 +43,15 @@ let app = new Vue ({
                 this.counter = this.images.length -1;
             } 
         },
+
+        ///////////////////////////
+        /////// EXTRA BONUS ///////
+        ///////////////////////////
+
+        //ad ogni click su un pallino verrà assegnato al counter il valore di i
+        clickPoint (i){
+            this.counter=i;
+        }
     },
 
     ///////////////////////////
@@ -54,6 +63,22 @@ let app = new Vue ({
     created: function(){
         //richiamare la funzione goNext con il this. 
         setInterval(this.goNext, 3000);
+    },
+
+    
+    ///////////////////////////
+    /////// EXTRA BONUS ///////
+    ///////////////////////////
+
+    //mounted hook
+    mounted: function(){
+        document.addEventListener("keyup", e => {
+            if (e.key === "ArrowRight"){
+                this.goNext();
+            } else if(e.key === "ArrowLeft"){
+                this.goPrev();
+            }
+        });
     }
 
 });
